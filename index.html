@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAS VEGAS 777 - CAS1N0</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('NEGRODORADO.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 0;
+    }
+
+    .landing-container {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 50px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-box {
+      margin-bottom: 20px;
+    }
+
+    .logo-box img {
+      max-width: 120px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      filter: drop-shadow(0 0 8px rgba(0,0,0,0.6));
+    }
+
+    .banner {
+      background-color: #22c55e;
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    h1 span {
+      color: #4ade80;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 18px 24px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      margin: 25px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease;
+      animation: bounceIn 1s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .description {
+      font-size: 15px;
+      margin-bottom: 25px;
+      color: #cbd5e1;
+    }
+
+    footer {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .popup {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .popup img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade {
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.95); opacity: 0; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="landing-container">
+
+    <!-- LOGO dentro del box -->
+    <div class="logo-box">
+      <img src="logo.png" alt="Logo Las Vegas 777">
+    </div>
+
+    <div class="banner">🎰 LAS VEGAS 777 · 10% DE BONO EN TU PRIMERA</div>
+
+    <h1>Jugá y ganá con<br><span>LAS VEGAS 777</span></h1>
+
+    <a href="https://wa.me/5493562412598?text=Hola%20quiero%20CR3AR%20UN%20USUAR10"
+       class="whatsapp-btn"
+       onclick="fbq('track', 'Contact')">
+       Crear Usuario (via Whatsapp)🤩
+    </a>
+
+    <p class="description">
+      Obtené premios exclusivos, CARGAS Y RETIRÁS tus ganancias las 24hs todos los días.
+    </p>
+
+    <footer>
+      <p>© 2024 LAS VEGAS 777 · Todos los derechos reservados</p>
+      <div class="popup fade" id="popupMessage">
+        <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Martín">
+        <span><strong>Martín</strong> ganó <strong>$172.000 ARS</strong> esta semana en TYT CASINO 🎉</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const mensajes = [
+      { nombre: "Martín", monto: 172000, img: "https://randomuser.me/api/portraits/men/10.jpg" },
+      { nombre: "Julia", monto: 395000, img: "https://randomuser.me/api/portraits/women/22.jpg" },
+      { nombre: "Estefano", monto: 284500, img: "https://randomuser.me/api/portraits/men/32.jpg" },
+      { nombre: "Sofía", monto: 312000, img: "https://randomuser.me/api/portraits/women/18.jpg" },
+      { nombre: "Leandro", monto: 367000, img: "https://randomuser.me/api/portraits/men/45.jpg" },
+      { nombre: "Valentina", monto: 151200, img: "https://randomuser.me/api/portraits/women/41.jpg" },
+      { nombre: "Nicolás", monto: 402000, img: "https://randomuser.me/api/portraits/men/56.jpg" },
+      { nombre: "Camila", monto: 278000, img: "https://randomuser.me/api/portraits/women/30.jpg" }
+    ];
+
+    let index = 0;
+    const popup = document.getElementById("popupMessage");
+
+    function actualizarMensaje() {
+      const usuario = mensajes[index];
+      popup.classList.remove("fade");
+      void popup.offsetWidth;
+      popup.innerHTML = `
+        <img src="${usuario.img}" alt="${usuario.nombre}">
+        <span><strong>${usuario.nombre}</strong> ganó <strong>$${usuario.monto.toLocaleString()} ARS</strong> esta semana en TYT CASINO 🎉</span>
+      `;
+      popup.classList.add("fade");
+      index = (index + 1) % mensajes.length;
+    }
+
+    setInterval(actualizarMensaje, 4000);
+  </script>
+
+</body>
+</html>
